@@ -1,6 +1,5 @@
 server:
-  port: '8082'
-
+  port: 8082
 
 spring:
   profiles:
@@ -12,13 +11,13 @@ spring:
   profiles: dev
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    url: jdbc:mysql://localhost:3306/dcbapp
     password: root
+    url: jdbc:mysql://localhost:3306/dcbapp
+    username: root
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: 'true'
+    show-sql: true
 welcome:
   message: Hallo jungs
 
@@ -28,28 +27,35 @@ spring:
   profiles: qa
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    url: jdbc:mysql://localhost:3306/dcbapp-qa
     password: root
+    url: jdbc:mysql://localhost:3306/dcbapp-qa
+    username: root
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: 'true'
+    show-sql: true
 welcome:
   message: Hallo jungs
 
-  ---
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
 
-  spring:
-    profiles: prod
-    datasource:
-      driver-class-name: com.mysql.jdbc.Driver
-      username: root
-      url: jdbc:mysql://localhost:3306/dcbapp-prod
-      password: root
-    jpa:
-      hibernate:
-        ddl-auto: update
-      show-sql: 'true'
-  welcome:
-    message: Hallo jungs
+---
+
+spring:
+  profiles: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/dcbapp-prod
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+welcome:
+  message: Hallo jungs
