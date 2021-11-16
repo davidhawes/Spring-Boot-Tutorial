@@ -53,7 +53,8 @@ Webkonsole Anmeldung
 
 
 
-## Springboot Komponenten
+### Springboot Komponenten
+
 
 Erstellen eines Entities mit dem Namen "Department"
 Die Annotations @Entity und @Id geben an dass es eine Entity mit einer Id ist
@@ -63,7 +64,7 @@ Die Annotations @Entity und @Id geben an dass es eine Entity mit einer Id ist
 DepartmentController, welcher die Daten mithilfe von den Services und dem Repository speichert
 ![image](https://user-images.githubusercontent.com/83290245/141698632-798c02bd-7c5f-4fbc-9171-8b9b78d05f2c.png)
 
-APIs mit Insomnia testen
+#### APIs mit Insomnia testen
 ![image](https://user-images.githubusercontent.com/83290245/141699455-43f79f33-8acd-4138-8a85-fff9d623ee9c.png)
 ![image](https://user-images.githubusercontent.com/83290245/141699459-dc8b4f0b-adcf-4342-9b56-bf62ab9f4734.png)
 
